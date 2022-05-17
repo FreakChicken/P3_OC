@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p, h1, h2, a, span {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header img {
+  width: 50%;
+  padding: 20px 0 20px 0;
+}
+
+#localisation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background: rgb(236, 236, 236);
+  box-shadow: inset 0 5px 5px rgb(221, 221, 221);
+}
+#localisation .fa-location-dot {
+  text-align: center;
+  padding: 14px 14px 0 0;
+}
+#localisation p {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#section_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(247, 247, 247);
+}
+#section_top h1 {
+  width: 70%;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 22px;
+  margin: 30px 0 0 0;
+}
+#section_top p {
+  width: 80%;
+  text-align: center;
+  font-size: 17px;
+  margin: 10px 0 30px 0;
+}
+#section_top #btn_explo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 50px;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  margin-bottom: 30px;
+}
+#section_top #btn_explo a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+#fonctionnement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#fonctionnement h2 {
+  width: 100%;
+  font-size: 22px;
+  font-weight: bolder;
+  margin: 50px 0 40px 30px;
+}
+#fonctionnement .card_fonctionnement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(247, 247, 247);
+  box-shadow: 0 5px 5px rgb(240, 240, 240);
+  border-radius: 15px;
+  width: 85%;
+  height: 60px;
+  margin-bottom: 20px;
+}
+#fonctionnement .card_fonctionnement span {
+  background-color: #9356DC;
+  font-size: 13px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 20px;
+  position: relative;
+  right: 13px;
+}
+#fonctionnement .card_fonctionnement .fa-solid {
+  color: gray;
+  margin: 0 20px 0 10px;
+}
+#fonctionnement .card_fonctionnement p {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
