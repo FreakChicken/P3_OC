@@ -20,6 +20,16 @@ a {
   color: black;
 }
 
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 header {
   display: flex;
   flex-direction: column;
@@ -180,7 +190,7 @@ header img {
   height: 70px;
 }
 #restaurants .card_restaurant_body h3 {
-  font-size: 20px;
+  font-size: 16px;
   margin: 10px 0 5px 10px;
   height: 35%;
   width: 50%;
@@ -263,7 +273,7 @@ footer .fa-solid {
   border-radius: 30px 30px 0 0;
 }
 #menu-titre h4 {
-  font-size: 30px;
+  font-size: 25px;
   margin-left: 20px;
   margin-bottom: 0;
 }
@@ -301,24 +311,56 @@ footer .fa-solid {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: baseline;
   flex-wrap: wrap;
   box-shadow: 0 0 5px rgb(211, 211, 211);
   border-radius: 15px;
   margin-bottom: 10px;
   cursor: pointer;
 }
+.card-menu .card-menu-info {
+  padding-left: 10px;
+  width: 80%;
+  height: 100%;
+}
 .card-menu h5 {
-  margin: 10px 0 10px 10px;
-  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 10px 0 10px 0;
+  font-size: 15px;
 }
 .card-menu p {
-  margin: 0 0 10px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  margin: 0 0 14px 0;
 }
-.card-menu span {
-  margin: 40px 20px 10px 0;
-  align-self: flex-end;
+.card-menu .card-menu-price {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 20px;
   font-weight: bold;
+}
+
+.fade-in-1 {
+  animation: slide-up 700ms linear backwards;
+}
+
+.fade-in-2 {
+  animation: slide-up 700ms linear 300ms backwards;
+}
+
+.fade-in-3 {
+  animation: slide-up 700ms linear 600ms backwards;
+}
+
+.fade-in-4 {
+  animation: slide-up 700ms linear 900ms backwards;
 }
 
 #menu-bottom {
