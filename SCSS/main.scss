@@ -48,7 +48,22 @@ $grey_shadow: rgb(211, 211, 211);
         font-size: 17px;
     }    
 }
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
+@keyframes slide-up {
+    from{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 header{
     @include center_column;
@@ -193,7 +208,7 @@ header{
         flex-wrap: wrap;
         height: 70px;
         h3{
-            font-size: 20px;
+            font-size: 16px;
             margin: 10px 0 5px 10px;
             height: 35%;
             width: 50%;
@@ -274,7 +289,7 @@ footer{
     bottom: 45px;
     border-radius: 30px 30px 0 0;
     h4{
-        font-size: 30px;
+        font-size: 25px;
         margin-left: 20px;
         margin-bottom: 0;
     }
@@ -310,25 +325,52 @@ footer{
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: baseline;
     flex-wrap: wrap;
     box-shadow: 0 0 5px $grey_shadow;
     border-radius: 15px;
     margin-bottom: 10px;
     cursor: pointer;
+    .card-menu-info{
+        padding-left: 10px;
+        width: 80%;
+        height: 100%;
+        
+    }
+
     h5{
-        margin: 10px 0 10px 10px;
-        font-size: 16px;
+        @include ellipsis;
+        margin: 10px 0 10px 0;
+        font-size: 15px;
     }
     p{
-        margin: 0 0 10px 10px;
+        @include ellipsis;
+        font-size: 15px;
+        margin: 0 0 14px 0;
     }
-    span{
-        margin: 40px 20px 10px 0;
-        align-self: flex-end;
+    .card-menu-price{
+        height: 100%;
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-right: 20px;
         font-weight: bold;
     }
 }
+.fade-in-1{
+    animation: slide-up 700ms linear backwards;
+}
+.fade-in-2{
+    animation: slide-up 700ms linear 300ms backwards;
+}
+.fade-in-3{
+    animation: slide-up 700ms linear 600ms backwards;
+}
+.fade-in-4{
+    animation: slide-up 700ms linear 900ms backwards;
+}
+
 #menu-bottom{
     @include center_row;
     width: 100%;
