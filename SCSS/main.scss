@@ -1,11 +1,16 @@
+/*Page d'accueil*/
+
 body {
     margin: 0;
 }
 *{
     box-sizing: border-box;
 }
-p, h1, h2, a, span {
+p, h1, h2, h3, h5, a, span {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+h4{
+    font-family: 'Shrikhand', Arial, Helvetica, sans-serif;
 }
 a{
     text-decoration: none;
@@ -14,14 +19,39 @@ a{
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
-$ligth_grey: rgb(247,247,247);
-$grey_shadow: rgba(240, 240, 240, 0.87);
+$ligth_grey: rgb(243, 243, 243);
+$grey_shadow: rgb(211, 211, 211);
 
-
-header{
+@mixin center_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+@mixin center_column {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+@mixin btn-style{
+    align-items: center;
+    width: 220px;
+    height: 50px;
+    border-radius: 30px;
+    background: linear-gradient($secondary, $primary);
+    margin-bottom: 30px;
+    &:visited {
+        background: linear-gradient($secondary, $primary) 
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 17px;
+    }    
+}
+
+
+header{
+    @include center_column;
     
     img {
         width: 50%;
@@ -30,11 +60,9 @@ header{
 }
 
 #localisation {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include center_row;
     width: 100%;
-    background: rgb(236, 236, 236);
+    background: rgb(230, 230, 230);
     box-shadow: inset 0 5px 5px rgb(221, 221, 221);
 
 
@@ -50,9 +78,7 @@ header{
 }
 
 #section_top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include center_column;
     background-color: $ligth_grey;
 
     h1 {
@@ -68,30 +94,16 @@ header{
         font-size: 17px;
         margin: 10px 0 30px 0;
     }
-    #btn_explo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 220px;
-        height: 50px;
-        border-radius: 30px;
-        background: linear-gradient($secondary, $primary);
-        margin-bottom: 30px;
-        &:visited {
-            background: linear-gradient($secondary, $primary) 
-        }
-        a{
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-        }
-    }
+}    
+#btn-explo{
+    @include center_row;
+    @include btn-style;
 }
 
+
 #fonctionnement {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include center_column;
+    margin-bottom: 60px;
 
     h2 {
         width: 100%;
@@ -109,6 +121,7 @@ header{
         width: 85%;
         height: 60px;
         margin-bottom: 20px;
+        transition: all .5s;
 
         span {
             background-color: $primary;
@@ -122,6 +135,7 @@ header{
         .fa-solid {
             color: gray;
             margin: 0 20px 0 10px;
+            transition: color .3s;
         } 
         p {
             font-weight: bold;
@@ -138,13 +152,13 @@ header{
 }
 
 #restaurants{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include center_column;
     background-color: $ligth_grey;
+    padding-bottom: 50px;
     h2{
         align-self: flex-start;
         margin-left: 20px;
+        margin-top: 50px;
     }
     .card_restaurant{
         display: flex;
@@ -154,12 +168,22 @@ header{
         background-color: white;
         box-shadow: 0 5px 5px $grey_shadow;
         margin-bottom: 20px;
+        cursor: pointer;
 
         img{
         border-radius: 20px;
         width: 100%;
         height: 190px;
         object-fit: cover;
+        }
+        span{
+            position: absolute;
+            transform: translate(-110%, 50%);
+            background-color: $tertiary;
+            color: #3f7768;
+            border-radius: 3px;
+            padding: 7px 20px;
+            font-weight: bold;
         }
         
     }
@@ -201,7 +225,7 @@ footer{
         color: white;
     }
     ul{
-        margin: 0;
+        margin: 0 0 0 30px;
     }
     p{
         padding: 0 0 10px 0;
@@ -211,4 +235,107 @@ footer{
         margin-right: 15px;
         width: 14px;
     }
-}   
+} 
+
+/*Pages restaurants*/
+
+#head_restau{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    a{
+        margin-left: 20px;        
+    }
+    img{
+        position:relative;
+        right: 20px;
+    }
+}
+#img-restau{
+    img{
+    object-fit: cover;    
+    width: 100%;
+    height: 290px;
+    }
+}    
+#menu{
+    @include center_column; 
+    background-color: $ligth_grey;  
+}    
+#menu-titre{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $ligth_grey;
+    position: relative;
+    bottom: 45px;
+    border-radius: 30px 30px 0 0;
+    h4{
+        font-size: 30px;
+        margin-left: 20px;
+        margin-bottom: 0;
+    }
+    .fa-regular{
+        margin: 35px 30px 0 0;
+        color: red;
+    }
+}
+.menu-parts{
+    @include center_column;
+    background-color: $ligth_grey;
+    width: 100%;
+    margin-bottom: 40px;
+    h3{
+        align-self: flex-start;     
+        margin-left: 20px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: normal;
+    }
+    .underline{
+        align-self: flex-start;
+        height: 3px;
+        width: 45px;
+        border-bottom: 3px solid $tertiary;
+        margin: 5px 0 20px 20px;
+
+    }
+}
+.card-menu{
+    width: 90%;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    box-shadow: 0 0 5px $grey_shadow;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    h5{
+        margin: 10px 0 10px 10px;
+        font-size: 16px;
+    }
+    p{
+        margin: 0 0 10px 10px;
+    }
+    span{
+        margin: 40px 20px 10px 0;
+        align-self: flex-end;
+        font-weight: bold;
+    }
+}
+#menu-bottom{
+    @include center_row;
+    width: 100%;
+    background-color: $ligth_grey;
+}
+#btn{
+    @include center_row;
+    @include btn-style;
+    margin: 50px 0 70px 0;
+}
