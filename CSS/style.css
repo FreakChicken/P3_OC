@@ -1,3 +1,4 @@
+/*Page d'accueil*/
 body {
   margin: 0;
 }
@@ -6,8 +7,12 @@ body {
   box-sizing: border-box;
 }
 
-p, h1, h2, a, span {
+p, h1, h2, h3, h5, a, span {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+h4 {
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -30,7 +35,7 @@ header img {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  background: rgb(236, 236, 236);
+  background: rgb(230, 230, 230);
   box-shadow: inset 0 5px 5px rgb(221, 221, 221);
 }
 #localisation .fa-location-dot {
@@ -46,7 +51,7 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(247, 247, 247);
+  background-color: rgb(243, 243, 243);
 }
 #section_top h1 {
   width: 70%;
@@ -61,8 +66,10 @@ header img {
   font-size: 17px;
   margin: 10px 0 30px 0;
 }
-#section_top #btn_explo {
+
+#btn-explo {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 220px;
@@ -71,19 +78,20 @@ header img {
   background: linear-gradient(#FF79DA, #9356DC);
   margin-bottom: 30px;
 }
-#section_top #btn_explo:visited {
+#btn-explo:visited {
   background: linear-gradient(#FF79DA, #9356DC);
 }
-#section_top #btn_explo a {
+#btn-explo a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 #fonctionnement {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 60px;
 }
 #fonctionnement h2 {
   width: 100%;
@@ -95,12 +103,13 @@ header img {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: rgb(247, 247, 247);
-  box-shadow: 0 5px 5px rgba(240, 240, 240, 0.87);
+  background-color: rgb(243, 243, 243);
+  box-shadow: 0 5px 5px rgb(211, 211, 211);
   border-radius: 15px;
   width: 85%;
   height: 60px;
   margin-bottom: 20px;
+  transition: all 0.5s;
 }
 #fonctionnement .card_fonctionnement span {
   background-color: #9356DC;
@@ -114,6 +123,7 @@ header img {
 #fonctionnement .card_fonctionnement .fa-solid {
   color: gray;
   margin: 0 20px 0 10px;
+  transition: color 0.3s;
 }
 #fonctionnement .card_fonctionnement p {
   font-weight: bold;
@@ -130,11 +140,13 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(247, 247, 247);
+  background-color: rgb(243, 243, 243);
+  padding-bottom: 50px;
 }
 #restaurants h2 {
   align-self: flex-start;
   margin-left: 20px;
+  margin-top: 50px;
 }
 #restaurants .card_restaurant {
   display: flex;
@@ -142,14 +154,24 @@ header img {
   width: 90%;
   border-radius: 20px;
   background-color: white;
-  box-shadow: 0 5px 5px rgba(240, 240, 240, 0.87);
+  box-shadow: 0 5px 5px rgb(211, 211, 211);
   margin-bottom: 20px;
+  cursor: pointer;
 }
 #restaurants .card_restaurant img {
   border-radius: 20px;
   width: 100%;
   height: 190px;
   object-fit: cover;
+}
+#restaurants .card_restaurant span {
+  position: absolute;
+  transform: translate(-110%, 50%);
+  background-color: #99E2D0;
+  color: #3f7768;
+  border-radius: 3px;
+  padding: 7px 20px;
+  font-weight: bold;
 }
 #restaurants .card_restaurant_body {
   display: flex;
@@ -190,7 +212,7 @@ footer li {
   color: white;
 }
 footer ul {
-  margin: 0;
+  margin: 0 0 0 30px;
 }
 footer p {
   padding: 0 0 10px 0;
@@ -199,6 +221,133 @@ footer p {
 footer .fa-solid {
   margin-right: 15px;
   width: 14px;
+}
+
+/*Pages restaurants*/
+#head_restau {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#head_restau a {
+  margin-left: 20px;
+}
+#head_restau img {
+  position: relative;
+  right: 20px;
+}
+
+#img-restau img {
+  object-fit: cover;
+  width: 100%;
+  height: 290px;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(243, 243, 243);
+}
+
+#menu-titre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+  position: relative;
+  bottom: 45px;
+  border-radius: 30px 30px 0 0;
+}
+#menu-titre h4 {
+  font-size: 30px;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+#menu-titre .fa-regular {
+  margin: 35px 30px 0 0;
+  color: red;
+}
+
+.menu-parts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(243, 243, 243);
+  width: 100%;
+  margin-bottom: 40px;
+}
+.menu-parts h3 {
+  align-self: flex-start;
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+.menu-parts .underline {
+  align-self: flex-start;
+  height: 3px;
+  width: 45px;
+  border-bottom: 3px solid #99E2D0;
+  margin: 5px 0 20px 20px;
+}
+
+.card-menu {
+  width: 90%;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  box-shadow: 0 0 5px rgb(211, 211, 211);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.card-menu h5 {
+  margin: 10px 0 10px 10px;
+  font-size: 16px;
+}
+.card-menu p {
+  margin: 0 0 10px 10px;
+}
+.card-menu span {
+  margin: 40px 20px 10px 0;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+#menu-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+}
+
+#btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 50px;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  margin-bottom: 30px;
+  margin: 50px 0 70px 0;
+}
+#btn:visited {
+  background: linear-gradient(#FF79DA, #9356DC);
+}
+#btn a {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
 }
 
 /*# sourceMappingURL=style.css.map */
