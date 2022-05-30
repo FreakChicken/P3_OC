@@ -375,13 +375,13 @@ footer{
         margin-bottom: 0;
         font-weight: normal;
     }
-    .underline{
-        align-self: flex-start;
+    h3::after{
+        display: block;
+        content: '';
         height: 3px;
         width: 45px;
-        border-bottom: 3px solid $tertiary;
-        margin: 5px 0 20px 20px;
-
+        background-color: $tertiary;
+        margin: 5px 0 20px 0;
     }
 }
 .card-menu{
