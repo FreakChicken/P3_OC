@@ -1,4 +1,6 @@
+@charset "UTF-8";
 /*Page d'accueil*/
+/*Général*/
 body {
   margin: 0;
 }
@@ -20,6 +22,9 @@ a {
   color: black;
 }
 
+/*Variables*/
+/*Mixin*/
+/*Keyframes*/
 @keyframes slide-up {
   from {
     transform: translateY(20px);
@@ -28,6 +33,32 @@ a {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes heart {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes check-slide-1 {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 20%;
+  }
+}
+@keyframes check-slide-2 {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 80%;
   }
 }
 header {
@@ -86,10 +117,17 @@ header img {
   height: 50px;
   border-radius: 30px;
   background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0 5px 5px rgb(211, 211, 211);
   margin-bottom: 30px;
+  transition: all 500ms;
 }
 #btn-explo:visited {
   background: linear-gradient(#FF79DA, #9356DC);
+}
+#btn-explo:hover {
+  background: linear-gradient(#fc84da, #a166eb);
+  box-shadow: 0 7px 7px rgb(180, 178, 178);
+  transform: scale(1.05);
 }
 #btn-explo a {
   text-decoration: none;
@@ -158,7 +196,8 @@ header img {
   margin-left: 20px;
   margin-top: 50px;
 }
-#restaurants .card_restaurant {
+
+.card_restaurant {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -168,13 +207,13 @@ header img {
   margin-bottom: 20px;
   cursor: pointer;
 }
-#restaurants .card_restaurant img {
+.card_restaurant img {
   border-radius: 20px;
   width: 100%;
   height: 190px;
   object-fit: cover;
 }
-#restaurants .card_restaurant span {
+.card_restaurant span {
   position: absolute;
   transform: translate(-110%, 50%);
   background-color: #99E2D0;
@@ -183,29 +222,36 @@ header img {
   padding: 7px 20px;
   font-weight: bold;
 }
-#restaurants .card_restaurant_body {
+
+.card_restaurant_body {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  justify-content: space-between;
   height: 70px;
 }
-#restaurants .card_restaurant_body h3 {
+.card_restaurant_body .heart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  padding: 0;
+}
+
+.card-restau-txt {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.card-restau-txt h3 {
   font-size: 16px;
   margin: 10px 0 5px 10px;
   height: 35%;
-  width: 50%;
+  width: 100%;
 }
-#restaurants .card_restaurant_body p {
+.card-restau-txt p {
   margin: 0 0 0 10px;
   height: 35%;
-  width: 50%;
-}
-#restaurants .card_restaurant_body .fa-regular {
-  width: 40%;
-  height: 40px;
-  align-self: flex-start;
-  text-align: center;
-  padding: 15px 0 0 50px;
+  width: 100%;
 }
 
 footer {
@@ -220,13 +266,13 @@ footer img {
 footer li {
   list-style-type: none;
   color: white;
+  padding-bottom: 10px;
+}
+footer li a {
+  color: white;
 }
 footer ul {
   margin: 0 0 0 30px;
-}
-footer p {
-  padding: 0 0 10px 0;
-  margin: 0;
 }
 footer .fa-solid {
   margin-right: 15px;
@@ -277,9 +323,25 @@ footer .fa-solid {
   margin-left: 20px;
   margin-bottom: 0;
 }
-#menu-titre .fa-regular {
-  margin: 35px 30px 0 0;
-  color: red;
+
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 10%;
+  padding: 30px 40px 0 0;
+}
+.heart .fa-regular {
+  position: absolute;
+}
+.heart .fa-solid {
+  font-family: "Font awesome 6 Free";
+  font-weight: 600;
+  opacity: 0;
+  color: #9356DC;
+}
+.heart .fa-solid:hover {
+  animation: heart 700ms ease-in-out forwards;
 }
 
 .menu-parts {
@@ -310,9 +372,7 @@ footer .fa-solid {
   height: 70px;
   background-color: white;
   display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  flex-wrap: wrap;
+  justify-content: space-between;
   box-shadow: 0 0 5px rgb(211, 211, 211);
   border-radius: 15px;
   margin-bottom: 10px;
@@ -327,6 +387,7 @@ footer .fa-solid {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
   margin: 10px 0 10px 0;
   font-size: 15px;
 }
@@ -334,6 +395,7 @@ footer .fa-solid {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
   font-size: 15px;
   margin: 0 0 14px 0;
 }
@@ -341,10 +403,38 @@ footer .fa-solid {
   height: 100%;
   width: 20%;
   display: flex;
-  justify-content: flex-end;
   align-items: flex-end;
-  padding-right: 20px;
+  text-align: end;
   font-weight: bold;
+  padding-right: 10px;
+}
+.card-menu .check {
+  background-color: #99E2D0;
+  color: white;
+  height: 100%;
+  width: 0%;
+  border-radius: 0 15px 15px 0;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-menu .anim-menu {
+  display: flex;
+  width: 100%;
+}
+.card-menu:hover .check {
+  animation: check-slide-1 700ms ease-in-out forwards;
+}
+.card-menu:hover .anim-menu {
+  animation: check-slide-2 700ms ease-in-out forwards;
+}
+.card-menu .fa-solid {
+  transform: rotate(0deg);
+  transition: 700ms transform ease-out;
+}
+.card-menu:hover .fa-solid {
+  transform: rotate(360deg);
 }
 
 .fade-in-1 {
@@ -380,11 +470,18 @@ footer .fa-solid {
   height: 50px;
   border-radius: 30px;
   background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0 5px 5px rgb(211, 211, 211);
   margin-bottom: 30px;
+  transition: all 500ms;
   margin: 50px 0 70px 0;
 }
 #btn:visited {
   background: linear-gradient(#FF79DA, #9356DC);
+}
+#btn:hover {
+  background: linear-gradient(#fc84da, #a166eb);
+  box-shadow: 0 7px 7px rgb(180, 178, 178);
+  transform: scale(1.05);
 }
 #btn a {
   text-decoration: none;
