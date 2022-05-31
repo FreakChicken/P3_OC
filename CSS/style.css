@@ -182,6 +182,17 @@ header img {
   padding: 20px 0 20px 0;
 }
 
+.title-xl {
+  display: none;
+}
+.title-xl p {
+  display: none;
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 75px;
+  margin: 0;
+}
+
 #localisation {
   display: flex;
   flex-direction: row;

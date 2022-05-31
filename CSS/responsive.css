@@ -1,7 +1,14 @@
 @media (min-width: 768px) {
   /*Page d'accueil*/
   header img {
-    width: 40%;
+    display: none;
+  }
+
+  .title-xl {
+    display: flex;
+  }
+  .title-xl p {
+    display: inline;
   }
 
   #fonctionnement {
@@ -12,13 +19,18 @@
     margin: 30px 0 30px 40px;
     align-self: flex-start;
   }
+  #fonctionnement .card_fonctionnement {
+    width: 90%;
+    margin: 0 16px 20px 16px;
+  }
 
   #restaurants h2 {
     margin: 30px 0 30px 40px;
   }
 
   footer ul {
-    margin-left: 0;
+    margin-left: 5%;
+    padding-left: 0;
   }
 
   /*Pages restaus*/
@@ -32,11 +44,68 @@
   }
 
   #menu-titre h4 {
-    margin-left: 40px;
+    margin-left: 5%;
   }
 
   .menu-parts h3 {
-    margin-left: 40px;
+    margin-left: 5%;
+  }
+}
+@media (min-width: 992px) {
+  /*Page d'accueil*/
+  header img {
+    display: none;
+  }
+
+  .title-xl p {
+    display: inline;
+  }
+
+  #fonctionnement {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #fonctionnement h2 {
+    width: 100%;
+    margin-left: 4%;
+  }
+  #fonctionnement .card_fonctionnement {
+    width: 30%;
+    margin: 0 16px 20px 16px;
+  }
+
+  #restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #restaurants h2 {
+    display: block;
+    width: 100%;
+    margin-left: 4%;
+  }
+
+  .card_restaurant {
+    width: 45%;
+    margin: 0 20px 20px 20px;
+  }
+
+  /*Pages restaurants*/
+  #menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #menu #menu-titre h4 {
+    margin-left: 5%;
+  }
+  #menu .menu-parts {
+    width: 31%;
+  }
+  #menu .menu-parts h3 {
+    margin-left: 5%;
   }
 }
 
