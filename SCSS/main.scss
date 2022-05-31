@@ -110,6 +110,115 @@ $grey_shadow: rgb(211, 211, 211);
         width: 80%;
     }
 }
+@keyframes loader-spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes loader-spin-reverse{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes loader-slide{
+    0%{
+        height: 100vh;
+        opacity: 1;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        height: 0vh;
+        opacity: 0;
+    }
+}
+
+/*Page d'accueil*/
+
+/*Loader*/
+.loader{
+    height: 100vh;
+    width: 100%;
+    opacity: 1;
+    background-color: white;
+    @include center_row;
+    align-items: center;
+    animation: loader-slide 3s ease-in-out 1s forwards;
+}
+
+.loader-circles-1{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 100%;
+    border: 4px solid transparent;
+    border-top-color: $primary;
+    animation: loader-spin 1s linear infinite;
+    &::after{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 100%;
+    border: 4px solid transparent;
+    border-top-color: $secondary;
+    animation: loader-spin-reverse 2s linear infinite;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        bottom: 25px;
+        right: 25px;
+        border-radius: 100%;
+        border: 4px solid transparent;
+        border-top-color: $tertiary;
+        animation: loader-spin-reverse 4s linear infinite;
+        } 
+}
+.loader-circles-2{
+    width: 215px;
+    height: 215px;
+    position: absolute;
+    border-radius: 100%;
+    border: 4px solid transparent;
+    border-top-color: $tertiary;
+    animation: loader-spin-reverse 1s linear infinite;
+    &::after{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 100%;
+    border: 4px solid transparent;
+    border-top-color: $secondary;
+    animation: loader-spin 2s linear infinite;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        bottom: 25px;
+        right: 25px;
+        border-radius: 100%;
+        border: 4px solid transparent;
+        border-top-color: $primary;
+        animation: loader-spin  4s linear infinite;
+    } 
+}
 
 header{
     @include center_column;
