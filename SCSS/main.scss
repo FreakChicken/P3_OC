@@ -220,6 +220,8 @@ $grey_shadow: rgb(211, 211, 211);
     } 
 }
 
+/* Header */
+
 header{
     @include center_column;
     
@@ -257,6 +259,8 @@ header{
     }
    
 }
+
+/*Section explo/fonctionnement*/
 
 #section_top {
     @include center_column;
@@ -332,6 +336,8 @@ header{
     }
 }
 
+/*Section cards restaurants*/
+
 #restaurants{
     @include center_column;
     background-color: $ligth_grey;
@@ -396,6 +402,8 @@ header{
     }
 }
 
+/* Footer */
+
 footer{
     background-color: rgb(65, 65, 65);
     padding-bottom: 20px;
@@ -423,6 +431,8 @@ footer{
 
 /*Pages restaurants*/
 
+/*Header*/
+
 #head_restau{
     display: flex;
     flex-direction: row;
@@ -442,7 +452,10 @@ footer{
     width: 100%;
     height: 290px;
     }
-}    
+}
+
+/* Section image/nom du restaurant */
+
 #menu{
     @include center_column; 
     background-color: $ligth_grey;  
@@ -483,6 +496,9 @@ footer{
         animation: heart 700ms ease-in-out forwards;
     }
 }
+
+/*Section menu*/
+
 .menu-parts{
     @include center_column;
     background-color: $ligth_grey;
@@ -582,6 +598,8 @@ footer{
 .fade-in-4{
     animation: slide-up 700ms linear 900ms backwards;
 }
+
+/* Section commander */
 
 #menu-bottom{
     @include center_row;

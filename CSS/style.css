@@ -172,6 +172,7 @@ a {
   animation: loader-spin 4s linear infinite;
 }
 
+/* Header */
 header {
   display: flex;
   flex-direction: column;
@@ -210,6 +211,7 @@ header img {
   font-size: 15px;
 }
 
+/*Section explo/fonctionnement*/
 #section_top {
   display: flex;
   flex-direction: column;
@@ -306,6 +308,7 @@ header img {
   color: #9356DC;
 }
 
+/*Section cards restaurants*/
 #restaurants {
   display: flex;
   flex-direction: column;
@@ -376,6 +379,7 @@ header img {
   width: 100%;
 }
 
+/* Footer */
 footer {
   background-color: rgb(65, 65, 65);
   padding-bottom: 20px;
@@ -402,6 +406,7 @@ footer .fa-solid {
 }
 
 /*Pages restaurants*/
+/*Header*/
 #head_restau {
   display: flex;
   flex-direction: row;
@@ -422,6 +427,7 @@ footer .fa-solid {
   height: 290px;
 }
 
+/* Section image/nom du restaurant */
 #menu {
   display: flex;
   flex-direction: column;
@@ -466,6 +472,7 @@ footer .fa-solid {
   animation: heart 700ms ease-in-out forwards;
 }
 
+/*Section menu*/
 .menu-parts {
   display: flex;
   flex-direction: column;
@@ -576,6 +583,7 @@ footer .fa-solid {
   animation: slide-up 700ms linear 900ms backwards;
 }
 
+/* Section commander */
 #menu-bottom {
   display: flex;
   flex-direction: row;
